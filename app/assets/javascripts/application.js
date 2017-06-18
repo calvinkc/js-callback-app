@@ -39,12 +39,12 @@ function getData(){
       var htmlString = '';
       for (var i = 0; i < response.length; i++) {
         var business = response[i];
-        htmlString += '<div onclick="changeDbaNameColor(this)">';
+        htmlString += '<div onclick="hideBusinessTree(this)">';
         htmlString += '<h1>' + business.dba_name + '</h1>';
-        htmlString += '<h4>' + business.city + '</h1>';
-        htmlString += '<h4>' + business.naic_code_description + '</h1>';
-        htmlString += '<h4>' + business.ttxid + '</h1>';
-        htmlString += '<h4>' + business.dba_name + '</h1>';
+        htmlString += '<h4>' + business.city + '</h4>';
+        htmlString += '<h4>' + business.naic_code_description + '</h4>';
+        htmlString += '<h4>' + business.ttxid + '</h4>';
+        htmlString += '<h4>' + business.dba_name + '</h4>';
         htmlString += '</div>';
       }
       registeredBizDiv.innerHTML = htmlString;
@@ -54,5 +54,9 @@ function getData(){
 
 function changeDbaNameColor(dbanameDiv) {
   dbanameDiv.classList.toggle('green-text');
+}
+
+function hideBusinessTree(dbanameDiv) {
+  dbanameDiv.classList.toggle('hide-tree');
 }
 
