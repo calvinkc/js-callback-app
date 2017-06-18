@@ -39,7 +39,7 @@ function getData(){
       var htmlString = '';
       for (var i = 0; i < response.length; i++) {
         var business = response[i];
-        htmlString += '<div>';
+        htmlString += '<div onclick="changeDbaNameColor(this)">';
         htmlString += '<h1>' + business.dba_name + '</h1>';
         htmlString += '<h4>' + business.city + '</h1>';
         htmlString += '<h4>' + business.naic_code_description + '</h1>';
@@ -50,5 +50,9 @@ function getData(){
       registeredBizDiv.innerHTML = htmlString;
     }
   );
+}
+
+function changeDbaNameColor(dbanameDiv) {
+  dbanameDiv.classList.toggle('green-text');
 }
 
